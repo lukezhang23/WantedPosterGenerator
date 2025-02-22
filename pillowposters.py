@@ -47,7 +47,6 @@ def image_naming_gui(possible_names):
     Returns:
     dict: A dictionary mapping image filenames to user-provided names.
     """
-
     folder_path = "Headshots"  # Hardcoded folder path
 
     # Get all image files in the folder
@@ -78,15 +77,23 @@ def image_naming_gui(possible_names):
             # Update filename label
             label_text.config(text=f"Image: {os.path.basename(image_path)}")
 
-            # Clear entry field
-            name_combobox.set('')
+            # Restore previous name if available
+            name_combobox.set(image_names_dict.get(os.path.basename(image_path), ''))
 
         else:
             # Show the "Finish" message when all images are processed
             label_text.config(text="All images processed.")
             save_button.config(state=tk.DISABLED)
+            back_button.config(state=tk.DISABLED)
 
-    # Function to save the user inputted name
+    # Function to load the previous image
+    def load_previous_image():
+        nonlocal current_image_index
+        if current_image_index > 0:
+            current_image_index -= 1  # Go back one image
+            load_next_image()
+
+    # Function to save the user-inputted name and move forward
     def save_name():
         nonlocal current_image_index
         if current_image_index < len(image_files):
@@ -113,9 +120,13 @@ def image_naming_gui(possible_names):
     name_combobox = ttk.Combobox(root, values=possible_names, font=("Helvetica", 14), width=20)
     name_combobox.pack(pady=10)
 
+    # Button to go back to the previous image
+    back_button = tk.Button(root, text="Back", command=load_previous_image, font=("Helvetica", 14))
+    back_button.pack(pady=10, side=tk.LEFT, padx=20)
+
     # Button to save the name and load the next image
     save_button = tk.Button(root, text="Save Name", command=save_name, font=("Helvetica", 14))
-    save_button.pack(pady=10)
+    save_button.pack(pady=10, side=tk.RIGHT, padx=20)
 
     # Load the first image
     load_next_image()
