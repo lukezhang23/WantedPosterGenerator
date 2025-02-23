@@ -34,6 +34,6 @@ This project uses a custom font: **Go 2 Old Western**.
 The usability for this program is quite limited/specific since this software was built just for one-time use. However, I will still add documentation on how to use it.
 
 1. Add a Descriptions.csv file to the directory, a template that you can export to a CSV is found in DescriptionsTemplate.xlsx
-2. Add the headshot images you want to use into a "Headshots" folder in the directory. These images should be in HEIC format. Images in JPG format will probably work but may run into bugs.
+2. Add the headshot images you want to use into a "Headshots" folder in the directory. These images should be in HEIC format. Images in JPG format will probably work but may run into bugs. Images should have a 4:3 aspect ratio.
 3. Run the Python Program, a GUI will pop up for the user to assign names (from Descriptions.csv) to images.
 4. The program will create a "wanted_poster.pdf" file which is a PDF of all the generated wanted posters. It will also move all HEIC photos in the "Headshots" folder to the "HeadshotsArchive" folder. (JPG images may be deleted in Headshots and not restored in HeadshotsArchive)
