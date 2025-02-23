@@ -13,6 +13,7 @@ the following form: YYYY.0M.0D.
 - Added a back button to the GUI.
 - Added a README file.
 - Added hand icons.
+- Added Descriptions.csv template
 
 ## 2025.2.21
 
