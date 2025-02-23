@@ -11,6 +11,8 @@ the following form: YYYY.0M.0D.
 ### Added
 
 - Added a back button to the GUI.
+- Added a README file.
+- Added hand icons.
 
 ## 2025.2.21
 
