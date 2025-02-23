@@ -25,7 +25,7 @@ pip install reportlab pillow_heif pillow
 ## Fonts
 This project uses a custom font: **Go 2 Old Western**.  
 
-### Download & Install  
+### Download
 1. Download the font file from https://www.dafont.com/go-2-old-western.font.  
 2. Place the downloaded folder in the project directory (filename of .ttf file should be "go_2_old_western/Go2OldWestern-Regular.ttf").  
 3. The script will register the font automatically when generating PDFs.
